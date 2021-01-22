@@ -17,8 +17,8 @@ init:
 		docker-compose exec app cp .env.example .env
 		docker-compose exec app php artisan key:generate
 		docker-compose exec app php artisan storage:link
-		# docker-compose exec app chmod -R 777 storage bootstrap/cache
-		# @make fresh
+		docker-compose exec app chmod -R 777 storage bootstrap/cache
+		@make fresh
 down:
 		docker-compose down --remove-orphans
 app:
